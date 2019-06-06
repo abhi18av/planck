@@ -22,6 +22,7 @@
   when data arrives on the socket. When the socket is closed the data handler
   will be called with a nil data value."
   ([host port data-handler]
+   ^:deprecation-nowarn
    (connect host port data-handler nil))
   ([host port data-handler opts]
    (js/PLANCK_SOCKET_CONNECT host port data-handler)))
@@ -33,6 +34,7 @@
 (defn ^:deprecated write
   "Writes data to a socket."
   ([socket data]
+   ^:deprecation-nowarn
    (write socket data nil))
   ([socket data opts]
    (js/PLANCK_SOCKET_WRITE socket data)))
@@ -43,6 +45,7 @@
 (defn ^:deprecated close
   "Closes a socket."
   ([socket]
+   ^:deprecation-nowarn
    (close socket nil))
   ([socket opts]
    (js/PLANCK_SOCKET_CLOSE socket)))
@@ -71,6 +74,7 @@
           (when data
             (write socket data)))))"
   ([port accept-handler]
+   ^:deprecation-nowarn
    (listen port accept-handler nil))
   ([port accept-handler opts]
    (js/PLANCK_SOCKET_LISTEN port accept-handler)))

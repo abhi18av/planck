@@ -7,6 +7,7 @@ All notable changes to this project will be documented in this file. This change
 
 ### Changed
 - `io/reader` on http follow redirects by default ([#937](https://github.com/planck-repl/planck/issues/937))
+- Promote `planck.socket.alpha` to `planck.socket` ([#956](https://github.com/planck-repl/planck/issues/956))
 
 ### Fixed
 - `tty?` spec refers to `planck.core/IWriter` ([#928](https://github.com/planck-repl/planck/issues/928))

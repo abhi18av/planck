@@ -1,8 +1,7 @@
-(ns ^:no-doc planck.socket.alpha
+(ns planck.socket
   "Planck socket functionality."
   (:require
-   [cljs.spec.alpha :as s]
-   [planck.repl :as repl]))
+   [cljs.spec.alpha :as s]))
 
 (s/def ::host string?)
 (s/def ::port integer?)
@@ -12,10 +11,10 @@
 (s/def ::accept-handler ifn?)
 (s/def ::opts (s/nilable map?))
 
-(defn ^:deprecated connect
+(defn connect
   "Connects a TCP socket to a remote host/port. The connected socket reference
   is returned. Data can be written to the socket using `write` and the socket
-  can be closed using `close`.
+  can be closed using [[close]].
 
   A data-handler argument must be supplied, which is a function that accepts a
   socket reference and a nillable data value. This data handler will be called
@@ -30,7 +29,7 @@
   :args (s/cat :host ::host :port ::port :data-handler ::data-handler :opts (s/? ::opts))
   :ret ::socket)
 
-(defn ^:deprecated write
+(defn write
   "Writes data to a socket."
   ([socket data]
    (write socket data nil))
@@ -40,7 +39,7 @@
 (s/fdef write
   :args (s/cat :socket ::socket :data ::data :opts (s/? ::opts)))
 
-(defn ^:deprecated close
+(defn close
   "Closes a socket."
   ([socket]
    (close socket nil))
@@ -51,7 +50,7 @@
   :args (s/cat :socket ::socket :opts (s/? ::opts))
   :ret nil?)
 
-(defn ^:deprecated listen
+(defn listen
   "Opens a server socket, listening for inbound connections. The port to
   listen on must be specified, along with an accept-handler.
 

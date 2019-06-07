@@ -71,6 +71,8 @@
 (try
   (copy-source "cljs/core/specs/alpha.cljc")
   (copy-source "cljs/core/specs/alpha.cljs")
+  (copy-source "cljs/core/async.cljs")
+  (copy-source "cljs/core/async.cljc")
   (catch Throwable _))
 
 (defn write-cache [cache out-path]

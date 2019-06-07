@@ -13,6 +13,7 @@
    [clojure.datafy]
    [clojure.reflect]
    [clojure.zip]
+   [cljs.core.async]
    [fipp.clojure]
    [fipp.deque]
    [fipp.edn]
